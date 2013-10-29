@@ -4,12 +4,16 @@
 " License:     WTFPL
 
 " Load the coffee and html indent functions.
-unlet b:did_indent
+if exists('b:did_indent')
+  unlet b:did_indent
+endif
 runtime indent/coffee.vim
 let s:coffeeIndentExpr = &l:indentexpr
 
 " Load html last so it can overwrite coffee settings.
-unlet b:did_indent
+if exists('b:did_indent')
+  unlet b:did_indent
+endif
 runtime indent/html.vim
 let s:htmlIndentExpr = &l:indentexpr
 
